@@ -1,7 +1,8 @@
 import {
   Component,
-  ChangeDetectionStrategy,
+  ChangeDetectionStrategy, Input, Output, EventEmitter,
 } from '@angular/core';
+import { IProduct } from '../../../../../shared/mocks/1-components/product';
 
 @Component({
   selector: 'ngx-shop-content-product',
@@ -10,5 +11,17 @@ import {
 })
 export class CategoryProductComponent {
 
+  @Input() product = {} as IProduct;
 
+  @Output() addToCart = new EventEmitter();
+
+  @Output() goToProduct = new EventEmitter();
+
+  addToBasket() {
+    this.addToCart.emit();
+  }
+
+  redirectTo() {
+    this.goToProduct.emit();
+  }
 }

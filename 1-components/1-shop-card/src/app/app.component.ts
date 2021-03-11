@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
 import { cartProduct, ICartProduct } from '../../../../shared/mocks/1-components/cart-product';
+import { Component } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,9 @@ import { cartProduct, ICartProduct } from '../../../../shared/mocks/1-components
 })
 export class AppComponent {
   public title = '1. Интерполяция и связывание (Карточка товара в корзине)';
+
   public terminalMessage: string;
+
   public product: ICartProduct = cartProduct;
 
   public increment() {
